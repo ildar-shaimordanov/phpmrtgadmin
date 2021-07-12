@@ -1,0 +1,29 @@
+
+<form method="get" action="{U_NAVIGATE}" id="sheetForm">
+<!-- BEGIN constructor -->
+<input type="hidden" name="action" value="construct" />
+<input type="hidden" name="panel" value="left" />
+<!-- END constructor -->
+<fieldset>
+	<legend>Sheets <a href="{U_HELP_SHEET}" target="_blank">[?]</a></legend>
+	<select name="sheet" onchange="
+	if ( window.parent ) {
+		var str = parent.location.href;
+		str = str.replace(/(sheet=-?\d+)/, 'sheet=' + this.options[this.options.selectedIndex].value);
+		str = str.replace(/([&|\?]chr=[^&]*)/, '');
+		parent.location.href = str;
+	}
+	this.form.submit()
+	">
+		<!-- BEGIN enable_add_option -->
+	        <option value="{enable_add_option.NEW_SHEET}"> Create new sheet </option>
+		<!-- END enable_add_option -->
+		<optgroup label="Sheets">
+		<!-- BEGIN sheet -->
+		<option value="{sheet.SHEET_NUM}" {sheet.SELECTED} >{sheet.SHEET_TITLE}</option>
+		<!-- END sheet -->
+		</optgroup>
+	</select>
+	<input type="submit" class="button" value="Select" />
+</fieldset>
+</form>

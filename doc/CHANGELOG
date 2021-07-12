@@ -1,0 +1,79 @@
+			========================
+			phpMrtgAdmin - CHANGELOG
+			========================
+
+
+Legend
+------
+
++ added
+- removed
+! fixed
+? unsolved
+
+version 1.06
+------------
+
++ Total information about all interfaces (All pages per one sheet)
+
+version 1.05
+------------
+
++ Alphanumeric search within a sheet by the 'SNMP alias' as the more human-friendly parameter
+
+! New MRTG class
+
+! Replacing of some files:
+
+- Core/Utils/Directories.php
++ Core/Utils/File_Find2.php
+
+- Crooked algorithm of paging
++ PEAR::Pager
+
+! Changes in the Core/Setup/Setup.ini
+
+! Little changes of the template files
+
+version 1.04
+------------
+
+! incorrect definition of start time when calculating of incoming and outgoing traffic
+
+version 1.03
+------------
+
+! fixed incorrect handle of templates within main site subdirectories 
+  such as http://domain.tld/path/to/mrtg/ etc.
+  There is tipically "Template->make_filename(): Error - file 'interface' does not exist"
+  [*** Thanks to Seyhan Tekelioglu ***]
+
++ new feature:
+  added "Period for out-of-date information" for suppress display of old and out-of-date information. 
+  By default, this parameter sets to 5 minutes. 
+  Available values are 5, 10, 15, 20, 30, 60, 120 minutes.
+  The special "never" value means "become never out of date"
+
+! little changes within the previous fixes
+
+version 1.02
+-----------
+
+! incorrectness of calculate incoming and outgoing traffic
++ deny to ``PEAR'' directory through ``.htaccess'' file
+
+version 1.01
+------------
+
++ delimitation of permits by IP to edit of sheets
+! correcting of doc/ files
+
+version 1.00
+------------
+
++ The first public release
+
+===========================================================================
+
+Copyright 2005, 2006, http://phpmrtgadmin.sourceforge.net
+

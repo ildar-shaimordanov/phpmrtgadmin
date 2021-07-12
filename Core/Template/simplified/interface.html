@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Refresh" content="{META_REFRESH}" />
+<meta http-equiv="Expires" content="{META_EXPIRES}" />
+<meta http-equiv="Last-Modified" content="{META_LAST_MODIFIED}" />
+<meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+<meta http-equiv="Cache-Control" content="post-check=0, pre-check=0" />
+<meta http-equiv="Cache-Control" content="max-age=0" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>{TITLE} :: phpMrtgAdmin {PHP_MRTG_ADMIN_VERSION}</title>
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" href="styles.css" type="text/css" />
+<style type="text/css">
+
+.navigation	{
+	text-align: center;
+}
+
+.navigate_sheets	{
+	margin-left: 708px ! important;
+	margin-left: 703px;
+	width: 310px;
+}
+
+.pagination	{
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+</style>
+<script type="text/javascript" language="javascript">
+
+function openWin(a, name)
+{
+        var props;
+        switch (name) {
+        case 'log':
+        	props = 'height=' + window.screen.availHeight + ',width=500';
+        	break;
+        case 'calc':
+        	props = 'height=400,width=650';
+        	break;
+        case 'html':
+        	props = 'height=' + window.screen.availHeight + ',width=700';
+        	break;
+        }
+        props += ',scrollbars';
+	var w = window.open(a.href, name, props);
+}
+
+</script>
+</head>
+
+<body>
+
+<h1 class="header">{TITLE}</h1>
+
+<div class="navigation">
+	<div class="navigate_sheets">
+		<!-- BEGIN action -->
+		<a href="{action.U_ACTION}" target="_top">{action.ACTION}</a>
+		<!-- END action -->
+		{NAVIGATE_SHEETS}
+	</div>
+
+	<!-- BEGIN search_letters -->
+	<div class="search_letters">{search_letters.SEARCH_LETTERS}</div>
+	<!-- END search_letters -->
+
+	<!-- BEGIN pagination -->
+	<div class="pagination">
+		<!-- BEGIN all_pages -->
+		<span style="font-weight: bold;"><a href="{pagination.all_pages.LINK}">{pagination.all_pages.TEXT}</a></span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+		<!-- END all_pages -->
+		{pagination.PAGINATION}
+	</div>
+	<!-- END pagination -->
+</div>
+
+{INTERFACE}
+
+<!-- BEGIN pagination -->
+<div class="pagination">
+	<!-- BEGIN all_pages -->
+	<span style="font-weight: bold;"><a href="{pagination.all_pages.LINK}">{pagination.all_pages.TEXT}</a></span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+	<!-- END all_pages -->
+	{pagination.PAGINATION}
+</div>
+<!-- END pagination -->
+
+<div class="footer">Generation time: {GENERATION_TIME} seconds</div>
+<div class="footer">
+&copy; 2005, 2006, 2007<br />
+<a href="http://phpmrtgadmin.sourceforge.net" target="_blank">phpMrtgAdmin {PHP_MRTG_ADMIN_VERSION}</a>
+</div>
+
+</body>
+</html>
+

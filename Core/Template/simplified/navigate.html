@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>phpMrtgAdmin</title>
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" href="styles.css" type="text/css" />
+<script type="text/javascript" src="multiselect.js"></script>
+<script type="text/javascript" language="javascript"><!--<![CDATA[
+
+var ms;
+
+function initMultiSelect()
+{
+	ms = new MultiSelect();
+	ms.addSelector(document.getElementById('if_type[]'));
+	ms.addExclusiveSelector(document.getElementById('exclusiveSelector'));
+
+	<!-- BEGIN ifTypeGroupJs -->
+	ms.addGroupSelector(document.getElementById('{ifTypeGroupJs.IF_TYPE_NUM}'), [{ifTypeGroupJs.IF_TYPE_VALUES}]);
+	<!-- END ifTypeGroupJs -->
+}
+
+function toggleOptions(flag)
+{
+	var list = document.forms['navForm']['display_info[]'];
+	for (var i = 0; i < list.options.length; i++) {
+		list.options[i].selected = flag;
+	}
+	return false;
+}
+
+function toggleSortOrder()
+{
+	var form = document.getElementById('navForm');
+	form.sort_order.disabled = form.sort_by.options.selectedIndex == 0;
+}
+
+var submitted = false;
+
+function checkSubmitted()
+{
+	if ( submitted ) {
+		document.forms['sheetForm'].submit();
+	}
+	setTimeout("checkSubmitted()", 500);
+}
+
+
+//]]>--></script>
+</head>
+
+<body onload="initMultiSelect(); toggleSortOrder(); document.forms['navForm'].submit()">
+
+{NAVIGATE_SHEETS}
+
+<form method="get" action="{U_INTERFACE}" target="rightFrame" id="navForm">
+<input type="hidden" name="action" value="construct" />
+<input type="hidden" name="panel" value="right" />
+<input type="hidden" name="sheet" value="{SHEET}" />
+
+<fieldset>
+	<legend>Systems (Routers) <a href="{U_HELP_SYSTEM}" target="_blank">[?]</a></legend>
+	<select name="if_system" onchange="var x = parent.rightFrame.document.getElementById('systemForm'); if (x) { x.if_system.options.selectedIndex = this.options.selectedIndex; }">
+		<option value="">Select Router</option>
+		<!-- BEGIN if_system -->
+		<option value="{if_system.IF_SYSTEM}" {if_system.SELECTED} >{if_system.IF_SYSTEM}</option>
+		<!-- END if_system -->
+	</select>
+</fieldset>
+
+<fieldset>
+	<legend>Types of interfaces <a href="{U_HELP_TYPE}" target="_blank">[?]</a></legend>
+	<!-- BEGIN ifTypeGroup -->
+	<div><label><input type="checkbox" id="{ifTypeGroup.IF_TYPE_NUM}" name="if_type[{ifTypeGroup.IF_TYPE_NUM}]" value="{ifTypeGroup.IF_TYPE_NUM}" {ifTypeGroup.CHECKED} onclick="ms.changeGroup(this)" />{ifTypeGroup.IF_TYPE_DESC}</label></div>
+	<!-- END ifTypeGroup -->
+	<select name="if_type[]" id="if_type[]" size="10" multiple="multiple" onclick="ms.changeItem(this)">
+		<option value=""></option>
+		<!-- BEGIN ifType -->
+		<option value="{ifType.IF_TYPE_NUM}" {ifType.SELECTED} >{ifType.IF_TYPE_NUM} - {ifType.IF_TYPE_DESC}</option>
+		<!-- END ifType -->
+	</select>
+	<div>
+	<label><input type="radio" name="modeSelector" onclick="ms.changeMode(this)" />Inclusive</label>
+	<label><input type="radio" name="modeSelector" onclick="ms.changeMode(this)" id="exclusiveSelector" checked="checked" />Exclusive</label>
+	</div>
+</fieldset>
+
+<fieldset>
+	<legend>Sorting <a href="{U_HELP_SORT}" target="_blank">[?]</a></legend>
+	<select name="sort_by" onclick="toggleSortOrder()">
+		<!-- BEGIN sort_by -->
+		<option value="{sort_by.VALUE}" {sort_by.SELECTED} >{sort_by.TEXT}</option>
+		<!-- END sort_by -->
+	</select>
+	<select name="sort_order">
+		<!-- BEGIN sort_order -->
+		<option value="{sort_order.VALUE}" {sort_order.SELECTED} >{sort_order.TEXT}</option>
+		<!-- END sort_order -->
+	</select>
+</fieldset>
+
+<fieldset>
+	<legend>Searching <a href="{U_HELP_SEARCH}" target="_blank">[?]</a></legend>
+	<select name="search_by">
+		<!-- BEGIN search_by -->
+		<option value="{search_by.VALUE}" {search_by.SELECTED} >{search_by.TEXT}</option>
+		<!-- END search_by -->
+	</select>
+	<input type="text" name="search_string" value="{SEARCH_STRING}" />
+</fieldset>
+
+<fieldset>
+	<legend>Displayable information <a href="{U_HELP_DISPLAY}" target="_blank">[?]</a></legend>
+	<select name="display_info[]" size="8" multiple="multiple">
+		<!-- BEGIN display_info -->
+		<option value="{display_info.VALUE}" {display_info.SELECTED} >{display_info.TEXT}</option>
+		<!-- END display_info -->
+	</select>
+	<a href="/#" onclick="toggleOptions(true); return false">Select all</a> :: <a href="/#" onclick="toggleOptions(false); return false">Unselect all</a>
+</fieldset>
+
+<fieldset>
+	<legend>Options <a href="{U_HELP_OPTIONS}" target="_blank">[?]</a></legend>
+	<label>
+		<span class="label">Sheet title</span>
+		<input type="text" name="sheet_title" value="{SHEET_TITLE}" />
+	</label>
+	<span class="label">Templates</span>
+	<select name="template_name">
+		<!-- BEGIN template_name -->
+		<option value="{template_name.VALUE}" {template_name.SELECTED} >{template_name.TEXT}</option>
+		<!-- END template_name -->
+	</select>
+	<br />
+	<span class="label">Update period</span>
+	<select name="update_period">
+		<!-- BEGIN update_period -->
+		<option value="{update_period.VALUE}" {update_period.SELECTED} >{update_period.TEXT}</option>
+		<!-- END update_period -->
+	</select>
+	<br />
+	<span class="label">Period for out-of-date information</span>
+	<select name="outofdate_period">
+		<!-- BEGIN outofdate_period -->
+		<option value="{outofdate_period.VALUE}" {outofdate_period.SELECTED} >{outofdate_period.TEXT}</option>
+		<!-- END outofdate_period -->
+	</select>
+<!--
+	<label>
+		<span class="label">Preview all entries for this sheet</span>
+		<input type="checkbox" name="p" value="all" checked="checked" />
+	</label>
+-->
+</fieldset>
+
+<div style="padding: 3px; text-align: right;">
+<input type="submit" class="button" name="back" value="Back" onclick="parent.location.href = parent.location.href.replace(/action=construct/, '').replace(/\?&/, '?').replace(/&&/, '&');" /><br />
+<input type="submit" class="button" name="preview" value="Preview" />
+<!-- BEGIN enable_add_button -->
+<input type="submit" class="button" name="save" value="Save" onclick="checkSubmitted(); return submitted = true" />
+<!-- END enable_add_button -->
+<!-- BEGIN enable_del_button -->
+<input type="submit" class="button" name="delete" value="Delete" onclick="checkSubmitted(); return submitted = window.confirm('Are You sure?')" />
+<!-- END enable_del_button -->
+</div>
+
+</form>
+
+</body>
+</html>
+

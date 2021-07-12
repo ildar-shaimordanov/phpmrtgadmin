@@ -1,0 +1,45 @@
+html, body	{
+	border: none;
+	font-family: Verdana, Tahoma, 'Courier New', sans-serif;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+h1	{
+	text-align: center;
+}
+
+#TOC	{
+	border: 1px solid #ccc;
+	float: left;
+	width: 250px;
+}
+
+#TOC h2	{
+	background-color: #ccc;
+	margin-top: 0;
+	padding: 5px;
+	text-align: center;
+}
+
+#BODY	{
+	margin-left: 260px;
+}
+
+#BODY h2	{
+	background-color: #ccc;
+	margin: 0;
+	padding: 5px;
+}
+
+#BODY h3	{
+	border-bottom: 1px solid #ccc;
+}
+
+.UP	{
+	margin: 10px;
+	text-align: right;
+}
+

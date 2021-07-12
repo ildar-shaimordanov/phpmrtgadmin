@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>{TITLE} :: phpMrtgAdmin</title>
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" href="styles.css" type="text/css" />
+<style type="text/css">
+
+select	{
+	margin: 0;
+	width: 100px;
+}
+
+</style>
+</head>
+
+<body onload="window.focus()">
+
+<h1>{TITLE}</h1>
+
+<form method="get" action="{U_DETAIL_CALC}">
+<input type="hidden" name="action" value="detail" />
+<input type="hidden" name="what" value="calc" />
+<input type="hidden" name="if_system" value="{IF_SYSTEM}" />
+<input type="hidden" name="html_if_title_desc" value="{HTML_IF_TITLE_DESC}" />
+
+<fieldset>
+<legend>Traffic calculator <a href="{U_HELP_CALC}" target="_blank">[?]</a></legend>
+
+<table width="100%">
+<tr>
+	<th>&nbsp;</th>
+	<th>Year</th>
+	<th>Month</th>
+	<th>Day</th>
+	<th>Hour</th>
+	<th>Minutes</th>
+</tr>
+<tr>
+	<th>Start:</th>
+	<td>
+		<select name="time_start[year]">
+		<!-- BEGIN time_start_year -->
+		<option value="{time_start_year.VALUE}" {time_start_year.SELECTED} >{time_start_year.TEXT}</option>
+		<!-- END time_start_year -->
+		</select>
+	</td>
+	<td>
+		<select name="time_start[month]">
+		<!-- BEGIN time_start_month -->
+		<option value="{time_start_month.VALUE}" {time_start_month.SELECTED} >{time_start_month.TEXT}</option>
+		<!-- END time_start_month -->
+		</select>
+	</td>
+	<td>
+		<select name="time_start[day]">
+		<!-- BEGIN time_start_day -->
+		<option value="{time_start_day.VALUE}" {time_start_day.SELECTED} >{time_start_day.TEXT}</option>
+		<!-- END time_start_day -->
+		</select>
+	</td>
+	<td>
+		<select name="time_start[hour]">
+		<!-- BEGIN time_start_hour -->
+		<option value="{time_start_hour.VALUE}" {time_start_hour.SELECTED} >{time_start_hour.TEXT}</option>
+		<!-- END time_start_hour -->
+		</select>
+	</td>
+	<td>
+		<select name="time_start[minute]">
+		<!-- BEGIN time_start_minute -->
+		<option value="{time_start_minute.VALUE}" {time_start_minute.SELECTED} >{time_start_minute.TEXT}</option>
+		<!-- END time_start_minute -->
+		</select>
+	</td>
+</tr>
+<tr>
+	<th>Stop:</th>
+	<td>
+		<select name="time_stop[year]">
+		<!-- BEGIN time_stop_year -->
+		<option value="{time_stop_year.VALUE}" {time_stop_year.SELECTED} >{time_stop_year.TEXT}</option>
+		<!-- END time_stop_year -->
+		</select>
+	</td>
+	<td>
+		<select name="time_stop[month]">
+		<!-- BEGIN time_stop_month -->
+		<option value="{time_stop_month.VALUE}" {time_stop_month.SELECTED} >{time_stop_month.TEXT}</option>
+		<!-- END time_stop_month -->
+		</select>
+	</td>
+	<td>
+		<select name="time_stop[day]">
+		<!-- BEGIN time_stop_day -->
+		<option value="{time_stop_day.VALUE}" {time_stop_day.SELECTED} >{time_stop_day.TEXT}</option>
+		<!-- END time_stop_day -->
+		</select>
+	</td>
+	<td>
+		<select name="time_stop[hour]">
+		<!-- BEGIN time_stop_hour -->
+		<option value="{time_stop_hour.VALUE}" {time_stop_hour.SELECTED} >{time_stop_hour.TEXT}</option>
+		<!-- END time_stop_hour -->
+		</select>
+	</td>
+	<td>
+		<select name="time_stop[minute]">
+		<!-- BEGIN time_stop_minute -->
+		<option value="{time_stop_minute.VALUE}" {time_stop_minute.SELECTED} >{time_stop_minute.TEXT}</option>
+		<!-- END time_stop_minute -->
+		</select>
+	</td>
+</tr>
+</table>
+
+<div style="padding-top: 5px; text-align: right;">
+<input type="submit" class="button" value="Calc!" />
+<input type="button" class="button" value="Close" onclick="window.close()" />
+</div>
+</fieldset>
+</form>
+
+<!-- BEGIN no_result -->
+<div style="border: 1px solid #FF0000; color: #FF0000; margin-left: auto; margin-right: auto; text-align: center;">
+Not enough data for interval:<br />
+{no_result.TIME_START}<br />
+{no_result.TIME_STOP}<br />
+</div>
+<!-- END no_result -->
+<!-- BEGIN result -->
+<table align="center">
+<caption>Estimated traffic volume</caption>
+<tr><th>Start</th><th>Stop</th><th>Incoming</th><th>Outgoing</th></tr>
+<tr class="zebra_light">
+<td>{result.TIME_START}</td>
+<td>{result.TIME_STOP}</td>
+<td>{result.BYTES_INCOMING} <br /><b>{result.MULTI_INCOMING}</b></td>
+<td>{result.BYTES_OUTGOING} <br /><b>{result.MULTI_OUTGOING}</b></td>
+</tr>
+</table>
+<!-- END result -->
+
+<div class="footer">Generation time: {GENERATION_TIME} seconds</div>
+<div class="footer">
+&copy; 2005, 2006<br />
+<a href="http://phpmrtgadmin.sourceforge.net" target="_blank">phpMrtgAdmin {PHP_MRTG_ADMIN_VERSION}</a>
+</div>
+
+</body>
+</html>
+

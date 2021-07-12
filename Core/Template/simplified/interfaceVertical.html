@@ -1,0 +1,50 @@
+<table>
+<!-- BEGIN interface -->
+<tr valign="top">
+	<td width="500">
+		<!-- BEGIN images -->
+		<a href="{interface.images.U_HTML}" target="_blank"><img src="{interface.images.U_IMG}" border="0" /></a>
+		<!-- END images -->
+		<div>
+		[ <a href="{interface.U_LOG}"  target="_blank" onclick="openWin(this, 'log');  return false">Text-Log</a> ]
+		[ <a href="{interface.U_CALC}" target="_blank" onclick="openWin(this, 'calc'); return false">Calc</a> ]
+		[ <a href="{interface.U_HTML}" target="_blank" onclick="openWin(this, 'html'); return false">Html</a> ]
+		</div>
+	</td>
+	<td width="500">
+		<table class="vert" width="100%">
+		<!-- BEGIN html_if_title_desc -->
+		<tr><th>{interface.html_if_title_desc.DISPLAY_NAME}</th><td>{interface.html_if_title_desc.HTML_IF_TITLE_DESC}</td></tr>
+		<!-- END html_if_title_desc -->
+		<!-- BEGIN html_if_snmp_name -->
+		<tr><th>{interface.html_if_snmp_name.DISPLAY_NAME}</th><td>{interface.html_if_snmp_name.HTML_IF_SNMP_NAME}</td></tr>
+		<!-- END html_if_snmp_name -->
+		<!-- BEGIN html_if_snmp_descr -->
+		<tr><th>{interface.html_if_snmp_descr.DISPLAY_NAME}</th><td><b>{interface.html_if_snmp_descr.HTML_IF_SNMP_DESCR}</b></td></tr>
+		<!-- END html_if_snmp_descr -->
+		<!-- BEGIN html_if_snmp_alias -->
+		<tr><th>{interface.html_if_snmp_alias.DISPLAY_NAME}</th><td><b>{interface.html_if_snmp_alias.HTML_IF_SNMP_ALIAS}</b></td></tr>
+		<!-- END html_if_snmp_alias -->
+		<!-- BEGIN if_type_num -->
+		<tr><th>{interface.if_type_num.DISPLAY_NAME}</th><td>{interface.if_type_num.HTML_IF_TYPE_DESC} ({interface.if_type_num.IF_TYPE_NUM})</td></tr>
+		<!-- END if_type_num -->
+		<!-- BEGIN if_ip -->
+		<tr><th>{interface.if_ip.DISPLAY_NAME}</th><td>{interface.if_ip.IF_IP} ({interface.if_ip.IF_DNS_NAME})</td></tr>
+		<!-- END if_ip -->
+		</table>
+
+		<div style="font-size: 1px;">&nbsp;</div>
+
+		<!-- BEGIN actual_info -->
+		<table class="vert" width="100%">
+		<tr><th>&nbsp;</th><th>Maximum</th><th>Average</th><th>Current</th></tr>
+		<tr class="in"><th>IN</th><td>{interface.actual_info.MAXIN}</td><td>{interface.actual_info.AVIN}</td><td>{interface.actual_info.CUIN}</td></tr>
+		<tr class="out"><th>OUT</th><td>{interface.actual_info.MAXOUT}</td><td>{interface.actual_info.AVOUT}</td><td>{interface.actual_info.CUOUT}</td></tr>
+		<tr><th>Max speed</th><td colspan="3">{interface.actual_info.IF_SPEED_STR}</td></tr>
+		<tr><th>Last update</th><td colspan="3">{interface.actual_info.LAST_UPDATE}</td></tr>
+		</table>
+		<!-- END actual_info -->
+	</td>
+</tr>
+<!-- END interface -->
+</table>

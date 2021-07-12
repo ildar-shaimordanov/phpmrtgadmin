@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>{TITLE} :: phpMrtgAdmin</title>
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body onload="window.focus()">
+
+<table class="vert">
+<tr><th>&nbsp;</th><td>{TITLE}</td></tr>
+<tr><th>Current time</th><td>{DATE}</td></tr>
+<tr><th>Incoming bytes counter</th><td>{INCOMING}</td></tr>
+<tr><th>Outgoing bytes counter</th><td>{OUTGOING}</td></tr>
+</table>
+
+<br />
+
+<table align="center">
+<tr>
+<th>Time</th>
+<th>In</th>
+<th>Out</th>
+<th>MaxIn</th>
+<th>MaxOut</th>
+</tr>
+<!-- BEGIN log_row -->
+<tr class="{log_row.ZEBRA}">
+	<td>{log_row.DATE}</td>
+	<td>{log_row.IN}</td>
+	<td>{log_row.OUT}</td>
+	<td>{log_row.MAXIN}</td>
+	<td>{log_row.MAXOUT}</td>
+</tr>
+<!-- END log_row -->
+</table>
+
+<div class="footer">Generation time: {GENERATION_TIME} seconds</div>
+<div class="footer">
+&copy; 2005, 2006<br />
+<a href="http://phpmrtgadmin.sourceforge.net" target="_blank">phpMrtgAdmin {PHP_MRTG_ADMIN_VERSION}</a>
+</div>
+
+</body>
+</html>
+

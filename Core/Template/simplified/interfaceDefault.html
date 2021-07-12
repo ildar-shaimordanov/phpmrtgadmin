@@ -1,0 +1,71 @@
+<table>
+<tr>
+<th width="500">&nbsp;</th>
+<!-- BEGIN actual_info -->
+<th>{actual_info.DISPLAY_NAME}</th>
+<!-- END actual_info -->
+<!-- BEGIN html_if_title_desc -->
+<th>{html_if_title_desc.DISPLAY_NAME}</th>
+<!-- END html_if_title_desc -->
+<!-- BEGIN html_if_snmp_name -->
+<th>{html_if_snmp_name.DISPLAY_NAME}</th>
+<!-- END html_if_snmp_name -->
+<!-- BEGIN html_if_snmp_descr -->
+<th>{html_if_snmp_descr.DISPLAY_NAME}</th>
+<!-- END html_if_snmp_descr -->
+<!-- BEGIN html_if_snmp_alias -->
+<th>{html_if_snmp_alias.DISPLAY_NAME}</th>
+<!-- END html_if_snmp_alias -->
+<!-- BEGIN if_type_num -->
+<th>{if_type_num.DISPLAY_NAME}</th>
+<!-- END if_type_num -->
+<!-- BEGIN if_ip -->
+<th>{if_ip.DISPLAY_NAME}</th>
+<!-- END if_ip -->
+</tr>
+<!-- BEGIN interface -->
+<tr class="{interface.ZEBRA}" valign="top">
+	<td>
+		<!-- BEGIN images -->
+		<a href="{interface.images.U_HTML}" target="_blank"><img src="{interface.images.U_IMG}" border="0" /></a><br />
+		<!-- END images -->
+		[ <a href="{interface.U_LOG}"  target="_blank" onclick="openWin(this, 'log');  return false">Text-Log</a> ]
+		[ <a href="{interface.U_CALC}" target="_blank" onclick="openWin(this, 'calc'); return false">Calc</a> ]
+		[ <a href="{interface.U_HTML}" target="_blank" onclick="openWin(this, 'html'); return false">Html</a> ]
+	</td>
+	<!-- BEGIN actual_info -->
+	<td>
+		<table>
+		<tr>
+		<td>
+		<tr><th>&nbsp;</th><th>Maximum</th><th>Average</th><th>Current</th></tr>
+		<tr class="in"><th>IN</th><td>{interface.actual_info.MAXIN}</td><td>{interface.actual_info.AVIN}</td><td>{interface.actual_info.CUIN}</td></tr>
+		<tr class="out"><th>OUT</th><td>{interface.actual_info.MAXOUT}</td><td>{interface.actual_info.AVOUT}</td><td>{interface.actual_info.CUOUT}</td></tr>
+		<tr><th>Max speed</th><td colspan="3">{interface.actual_info.IF_SPEED_STR}</td></tr>
+		<tr><th>Last update</th><td colspan="3">{interface.actual_info.LAST_UPDATE}</td></tr>
+		</td>
+		</tr>
+		</table>
+	</td>
+	<!-- END actual_info -->
+	<!-- BEGIN html_if_title_desc -->
+	<td>{interface.html_if_title_desc.HTML_IF_TITLE_DESC}</td>
+	<!-- END html_if_title_desc -->
+	<!-- BEGIN html_if_snmp_name -->
+	<td>{interface.html_if_snmp_name.HTML_IF_SNMP_NAME}</td>
+	<!-- END html_if_snmp_name -->
+	<!-- BEGIN html_if_snmp_descr -->
+	<td>{interface.html_if_snmp_descr.HTML_IF_SNMP_DESCR}</td>
+	<!-- END html_if_snmp_descr -->
+	<!-- BEGIN html_if_snmp_alias -->
+	<td>{interface.html_if_snmp_alias.HTML_IF_SNMP_ALIAS}</td>
+	<!-- END html_if_snmp_alias -->
+	<!-- BEGIN if_type_num -->
+	<td>{interface.if_type_num.HTML_IF_TYPE_DESC} ({interface.if_type_num.IF_TYPE_NUM})</td>
+	<!-- END if_type_num -->
+	<!-- BEGIN if_ip -->
+	<td>{interface.if_ip.IF_IP} ({interface.if_ip.IF_DNS_NAME})</td>
+	<!-- END if_ip -->
+</tr>
+<!-- END interface -->
+</table>

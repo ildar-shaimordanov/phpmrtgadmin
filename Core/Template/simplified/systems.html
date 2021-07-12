@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>phpMrtgAdmin</title>
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" href="styles.css" type="text/css" />
+</head>
+
+<body>
+
+<form method="get" action="{U_INTERFACE}" id="systemForm">
+<input type="hidden" name="action" value="construct" />
+<input type="hidden" name="panel" value="right" />
+<input type="hidden" name="sheet" value="" />
+
+<fieldset>
+<legend>Systems</legend>
+<select name="if_system" onchange="parent.leftFrame.document.getElementById('navForm').if_system.options.selectedIndex = this.options.selectedIndex">
+<option value="">Select Router</option>
+<!-- BEGIN if_system -->
+<option value="{if_system.IF_SYSTEM}">{if_system.IF_SYSTEM}</option>
+<!-- END if_system -->
+</select>
+<input type="submit" class="button" value="Go!" />
+</fieldset>
+
+</form>
+
+</body>
+</html>
+

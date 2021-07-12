@@ -1,0 +1,113 @@
+/*
+*
+* Page styles
+*
+*/
+html, body	{
+	border: none;
+	font-family: Verdana, Tahoma, 'Courier New', sans-serif;
+	font-size: 10px;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+form	{
+	margin: 0;
+	padding: 0;
+}
+
+.header	{
+	text-align: center;
+}
+
+.footer	{
+	padding: 25px;
+	text-align: center;
+}
+
+
+/*
+*
+* Table styles
+*
+*/
+table	{
+	border: 1px solid #666;
+	border-collapse: separate;
+	border-spacing: 3px;
+}
+
+tr	{
+	vertical-align: top;
+}
+
+th	{
+	background-color: #999;
+	color: #fff;
+	white-space: nowrap;
+}
+
+table.vert	{
+	width: 100%;
+}
+
+table.vert th	{
+	text-align: right;
+	width: 25%;
+}
+table.vert td	{
+	background-color: #eee;
+}
+
+td	{
+	white-space: nowrap;
+}
+
+.zebra_dark	{
+	background-color: #ccc;
+}
+
+.zebra_light	{
+	background-color: #eee;
+}
+
+tr.in th, tr.in td	{
+	color: #009900;
+}
+
+tr.out th, tr.out td	{
+	color: #000099;
+}
+
+/*
+*
+* Control styles
+*
+*/
+label	{
+	clear: both;
+	display: block;
+	width: 100%;
+}
+
+span.label	{
+	display: block;
+	float: left;
+	margin-right: 5px;
+	text-align: right;
+	width: 50%;
+}
+
+select	{
+	font-family: Verdana, Tahoma, 'Courier New', sans-serif;
+	font-size: 10px;
+}
+
+input.button	{
+	border: 1px solid #000;
+	font-family: Verdana, Tahoma, 'Courier New', sans-serif;
+	font-size: 10px;
+	width: 100px;
+}
+

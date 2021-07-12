@@ -1,0 +1,17 @@
+			===================
+			phpMrtgAdmin - TODO
+			===================
+
+
+in the plans of the future versions there are the next features:
+
+- transfer to XML support
+- CSV and Excel formatted log-files
+- parameteric search within a sheet
+- combined display of different routers per one page
+  (currently this feature can be solved by using of frames)
+
+===========================================================================
+
+Copyright 2005, 2006, http://phpmrtgadmin.sourceforge.net
+

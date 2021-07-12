@@ -1,0 +1,68 @@
+/**
+*
+* This is the part of the PEAR Debug package
+*
+* PHP versions 4 and 5
+*
+* LICENSE: This source file is subject to version 3.0 of the PHP license
+* that is available through the world-wide-web at the following URI:
+* http://www.php.net/license/3_0.txt.  If you did not receive a copy of
+* the PHP License and are unable to obtain it through the web, please
+* send a note to license@php.net so we can mail you a copy immediately.
+*
+* @category   PHP
+* @package    Debug
+* @author     Ildar N. Shaimordanov <ildar-sh@mail.ru>
+* @license    http://www.php.net/license/3_0.txt  PHP License 3.0
+* @version    $Id: styles.css,v 1.1 2007/06/08 12:42:23 phpmrtgadmin Exp $
+*
+*/
+
+/*
+*
+* Debug::backtrace() styles
+*
+*/
+.dbg_table		{ border: 1px solid #ccc; font-family: Verdana, sans-serif; font-size: 10px; width: 100%; }
+.dbg_row		{ background-color: #ccc; vertical-align: top; }
+.dbg_td1		{ width: 350px; }
+.dbg_td2		{ padding-left: 10px; }
+
+.dbg_file		{}
+.dbg_line		{ font-weight: bold; padding-left: 5px; width: 50px; }
+.dbg_function		{ font-weight: bold; }
+
+.dbg_args		{ display: block; }
+.dbg_args_empty,
+.dbg_args_left		{ display: inline-block; padding-left: 5px; }
+.dbg_args_right		{ clear: both; float: left; }
+.dbg_args_separator	{ display: none; }
+.dbg_arg		{ clear: both; cursor: pointer; float: left; margin-left: 30px; }
+
+
+/*
+*
+* Debug::dump() styles
+*
+*/
+.dbg_var_window		{ background-color: #ccc; border: 1px solid #000; height: 232px; padding: 2px; padding-top: 32px; width: 404px; }
+.dbg_var_frame		{ background-color: #fff; border: 1px solid #000; height: 230px; overflow: scroll; width: 400px; }
+.dbg_var_view		{ width: 1000%; }
+
+.dbg_var_complex	{ border-left: 1px solid #ccc; border-top: 1px solid #ccc; font-size: 10px; width: 100%; }
+.dbg_var_complex ul	{ list-style-type: none; margin: 0; }
+.dbg_var_complex ul li	{ list-style-type: none; margin: 0; padding-left: 20px; }
+
+.dbg_var_name		{ font-family: Verdana, sans-serif; font-weight: bold; }
+.dbg_var		{ cursor: pointer; font-family: Verdana, sans-serif; font-size: 10px; }
+
+.dbg_var_string		{ color: #009900; }
+.dbg_var_integer,
+.dbg_var_float,
+.dbg_var_double		{ color: #0000ff; }
+.dbg_var_boolean,
+.dbg_var_null,
+.dbg_var_resource	{ color: #930; font-weight: bold; }
+.dbg_var_array,
+.dbg_var_object		{}
+

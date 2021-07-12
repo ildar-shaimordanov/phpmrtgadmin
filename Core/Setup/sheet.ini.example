@@ -1,0 +1,28 @@
+[sheet]
+[sheet/0]
+"if_system"="Cisco7206"
+"if_type"="135"
+"sort_by"="html_if_snmp_name"
+"sort_order"="ASC"
+"search_by"="html_if_snmp_alias"
+"search_string"=""
+"display_info"="images actual_info html_if_snmp_name html_if_snmp_descr html_if_snmp_alias if_ip"
+"sheet_title"=""
+"template_name"="Vertical"
+"update_period"="5"
+
+[sheet/1]
+"if_system"="Cisco7206"
+"if_type"=""
+"sort_by"="html_if_snmp_descr"
+"sort_order"="ASC"
+"search_by"="html_if_snmp_name"
+"search_string"="Fa1/0.29 Fa1/0.30 Fa1/0.50"
+"display_info"="images actual_info html_if_snmp_name html_if_snmp_descr html_if_snmp_alias if_ip"
+"sheet_title"=""
+"template_name"="Vertical"
+"update_period"="5"
+
+
+[combo]
+
